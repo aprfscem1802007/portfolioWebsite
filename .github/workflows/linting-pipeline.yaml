@@ -1,0 +1,19 @@
+name: Linting Pipeline
+
+steps:
+  - name: Checkout Code
+    uses: actions/checkout@v3
+
+  - name: Set up Node.js
+    uses: actions/setup-node@v3
+    with:
+      node-version: "16"
+
+  - name: Install Dependencies
+    run: npm install htmlhint stylelint --save-dev
+
+  - name: Run HTML Lint
+    run: npx htmlhint src/**/*.html
+
+  - name: Run CSS Lint
+    run: npx stylelint "styles/**/*.css"
