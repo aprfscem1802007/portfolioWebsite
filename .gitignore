@@ -1,0 +1,2 @@
+echo "/modules" > .gitignore
+echo "**/modules" >> .gitignore
